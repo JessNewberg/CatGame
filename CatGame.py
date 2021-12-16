@@ -1,5 +1,35 @@
 import random
 
+def go_yard():
+    print ("\n * \n * \n * \n * \n * \n")
+    yardinput = input ("what a nice day it is! truly beautiful. \n /ᐠ‸⑅‸ ᐟ\ﾉ \n Would you like to play outside? type 'play' to find something to do in the yard. \n type 'return'to go back to menu.")
+    if yardinput == "play":
+        yardtime = 0
+        while yardtime == 0:
+            yardplay = random.randint(0,10)
+            if yardplay == 0:
+                print ("...nothing to do. what a cat-astrophe.")
+            elif yardplay == 1 or yardplay == 2:
+                print ("You got the zoomies! Runrunrunrunrunrunrun! \n /ᐠⓛ ﻌ ⓛᐟ\)")
+            elif yardplay == 3 or yardplay == 4:
+                print ("You found an excellent sunny spot, and decide to doze in it for a while.\n /ᐠ=ᆽ=ᐟ\"" )
+            elif yardplay == 5 or yardplay == 6:
+                print ("APEX PREDATOR!!! You stalk a bird in a tree, and then POUNCE. \n sadly, it escapes. Maybe next time. /ᐠﹷ ‸ ﹷ ᐟ\ﾉ")
+            elif yardplay == 7:
+                print ("No better place to groom yourself than outside... you have to look your best at all times. \n ✧/ᐠ-ꞈ-ᐟ\ ")
+            elif yardplay == 8 or yardplay == 9:
+                uhoh = input ("OH NO! The neighbors have their vicious dog out! \n  /ᐠ۪. ̱ .۪ᐟ\ﾉ \n It's on the other side of the fence, so it can't get to you... \n do you want to hiss at it or go inside? \n (you can come back out later.) input 'hiss' or 'inside'. ")   
+                if uhoh == "hiss":
+                    print ("you yowl and hiss at the dog... and he runs away. what a ferocious creature you are! \n /ᐠ ̥  ̮  ̥ ᐟ\ฅ")
+                if uhoh == "inside":
+                    print ("time to go inside! very wise.")
+                    break
+            playagain1 = input ("Play More in the Yard? (y or n)")
+            if playagain1 == "y":
+                yardtime == 0
+            if playagain1 == "n":
+                break
+        
 def treasure_search():
     print ("\n * \n * \n * \n * \n * \n")
     treasureinput = input ("Time for a Treasure hunt! /ᐠ｡ꞈ｡ᐟ✿\ \n type 'look' to look for treasure. \n type 'return' to go back to menu.")
@@ -31,39 +61,21 @@ def treasure_search():
             if searchagain1 == "n":
                 break
 
-def go_yard():
+def grab_snack():
     print ("\n * \n * \n * \n * \n * \n")
-    yardinput = input ("what a nice day it is! truly beautiful. \n /ᐠ‸⑅‸ ᐟ\ﾉ \n Would you like to play outside? type 'play' to find something to do in the yard. \n type 'return'to go back to menu.")
-    if yardinput == "play":
-        yardtime = 0
-        while yardtime == 0:
-            yardplay = random.randint(0,10)
-            if yardplay == 0:
-                print ("...nothing to do. what a cat-astrophe.")
-            if yardplay == 1 or yardplay == 2:
-                print ("You got the zoomies! Runrunrunrunrunrunrun! \n /ᐠⓛ ﻌ ⓛᐟ\)")
-            if yardplay == 3 or yardplay == 4:
-                print ("You found an excellent sunny spot, and decide to doze in it for a while.\n /ᐠ=ᆽ=ᐟ\"" )
-            if yardplay == 5 or yardplay == 6:
-                print ("APEX PREDATOR!!! You stalk a bird in a tree, and then POUNCE. \n sadly, it escapes. Maybe next time. /ᐠﹷ ‸ ﹷ ᐟ\ﾉ")
-            if yardplay == 7:
-                print ("No better place to groom yourself than outside... you have to look your best at all times. \n ✧/ᐠ-ꞈ-ᐟ\ ")
-            if yardplay == 8 or yardplay == 9:
-                uhoh = input ("OH NO! The neighbors have their vicious dog out! \n  /ᐠ۪. ̱ .۪ᐟ\ﾉ \n It's on the other side of the fence, so it can't get to you... \n do you want to hiss at it or go inside? \n (you can come back out later.) input 'hiss' or 'inside'. ")   
-                if uhoh == "hiss":
-                    print ("you yowl and hiss at the dog... and he runs away. what a ferocious creature you are! \n /ᐠ ̥  ̮  ̥ ᐟ\ฅ")
-                if uhoh == "return":
-                    print ("time to go inside! very wise.")
-                    break
-            playagain1 = input ("Play More in the Yard? (y or n)")
-            if playagain1 == "y":
-                yardtime == 0
-            if playagain1 == "n":
-                break
-        
-                
+    snackinput = input ("Eating: One of a cat's favorite chores. \n Thankfully, your owner has recently filled your wet food and dry food bowl! \n ᶠᵉᵉᵈ ᵐᵉ /ᐠ-ⱉ-ᐟ\ﾉ \n would you like wet food, dry food, or.... something else? \n For Wet Food, Press 1. For Dry Food, Press 2. For Something else... Press 3.")
+    if snackinput == "1":
+        print ("Yum! A delicious, crunchy snack. +1 health! (Just Kidding.) \n /ᐠ ̥ ̣̮ ̥ ᐟ\ﾉ")
+    elif snackinput == "2":
+        print ("This stuff smells awful, but it is definitely wet. \n /ᐠ . ֑ . ᐟ\ﾉ")
+    elif snackinput == "3":
+        weirdsnack = input ("You want to eat... something else? Whatever floats your boat,I guess. \n What do you want to eat? (Type anything!)")
+        print ("Alright, you eat " + weirdsnack + ". Not very nutritious.")
+    else: "Sorry, that isn't a valid input. Please type 'return' to return to the selection menu."
+    
 
-def main():
+def main(username):
+    print ("Hello, " + username + "!")
     startgame = input ("It’s time to live out your feline dreams! \n \n Most activities will give you a choice of possible options, and depending on your choice, different things will happen. \n Follow the instructions for inputs, and have fun! \n  ✧/ᐠ-ꞈ-ᐟ\ \n Would you like to play or exit?")
     if startgame == "play":
         print ("\n * \n * \n * \n")
@@ -86,10 +98,13 @@ def main():
                 grab_snack()
             elif action == "7":
                 gametime = gametime - 1
+            else:
+                print ("Sorry, that isn't a valid input.")
+                break
         print ("\n * \n * \n * \n * \n * \n")
         print ("Looks like the day is over! What a wonderful cat day.")
         print ("Thank you for playing with us today! \n /ᐠ . ֑ . ᐟ\ﾉ")
     elif startgame == "exit":
         print ("Thank you for playing with us today! \n /ᐠ . ֑ . ᐟ\ﾉ")
 
-main()
+main("User")
