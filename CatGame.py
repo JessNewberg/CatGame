@@ -1,3 +1,9 @@
+""" In this game, you are able to play as a cat. 
+You have several options of what to do, all of which are selected by user inputs.
+Each subfunction (all of which connect back to main) works a little differently.
+Some use a randomizer, some leave it completely up to the user to decide what they want to do...
+But generally, the user can do as many cat related activities as they want before exiting out."""
+
 import random
 
 def go_yard():
@@ -141,7 +147,36 @@ def pester_owner ():
             print("Ah... the owner put you in time out.")
     else:
         print("You, a cat, don't understand that command.")
+
+def play_toy ():
+    play_input = input("Time to play with your toys! Would you like to find your next new prey? Y or N: ")
+    if play_input == "Y":
+        if random.randrange(0,100) < 40:
+            print("You found a spring! That thing can spring forever...")
+        elif random.randrange(0, 100) < 30:
+            print("You found a mouse toy! Clearly, having this means that you're the apex predator in this house.")
+        elif random.randrange(0,100) < 20:
+            print("You found catnip! Uh... what were we talking about again?")
+        else:
+            the_fight = input("Vacuum attack! What will you do?! Run of Fight?: ")
+            if the_fight == "Run":
+                print("The beast chased you far off from your beloved toys...")
+            elif the_fight == "Fight":
+                print("Twas a fearsome battle, but the beast won in the end... all of your toys were sucked up.")
+            else:
+                print("Pretty sure that isn't a command a cat knows... you decide to run away!")
+    elif play_input == "N":
+        print("You'll play another time.")
+    else:
+        print("Are you a cat irl? You sure type like one! Either way, you don't know that command.")
+        
+def take_a_nap ():
+    nap_time = input("Is it time for a nap already? Y or N: ")
+    if nap_time == "Y":
+        print("You took a short cat nap. Oyasumi.")
+    elif nap_time == "N":
+        print("Nope! You feel as active as ever!")
+    else:
+        print("You're pretty sure you're awake. Your typing makes it hard to tell though...")
         
 main("User")
-
-
