@@ -1,11 +1,20 @@
+""" In this game, you are able to play as a cat. 
+You have several options of what to do, all of which are selected by user inputs.
+Each subfunction (all of which connect back to main) works a little differently.
+Some use a randomizer, some leave it completely up to the user to decide what they want to do...
+But generally, the user can do as many cat related activities as they want before exiting out."""
+
 import random
 
 def go_yard():
     print ("\n * \n * \n * \n * \n * \n")
+    #first, the function asks whether the user wants to play or return to the menu. If they select return, it breaks.
     yardinput = input ("what a nice day it is! truly beautiful. \n /ᐠ‸⑅‸ ᐟ\ﾉ \n Would you like to play outside? type 'play' to find something to do in the yard. \n type 'return'to go back to menu.")
     if yardinput == "play":
+    #if the user wants to play, they enter the yard procedure. A while loop is established for the duration of when they want to play.
         yardtime = 0
         while yardtime == 0:
+        #a random number generator decides what activity the user finds to do. every time they choose to do an activity again, a new number is generated. 
             yardplay = random.randint(0,10)
             if yardplay == 0:
                 print ("...nothing to do. what a cat-astrophe.")
@@ -18,12 +27,14 @@ def go_yard():
             elif yardplay == 7:
                 print ("No better place to groom yourself than outside... you have to look your best at all times. \n ✧/ᐠ-ꞈ-ᐟ\ ")
             elif yardplay == 8 or yardplay == 9:
+                #in the event of a dog attack, the user can either fight or flee. 
                 uhoh = input ("OH NO! The neighbors have their vicious dog out! \n  /ᐠ۪. ̱ .۪ᐟ\ﾉ \n It's on the other side of the fence, so it can't get to you... \n do you want to hiss at it or go inside? \n (you can come back out later.) input 'hiss' or 'inside'. ")   
                 if uhoh == "hiss":
                     print ("you yowl and hiss at the dog... and he runs away. what a ferocious creature you are! \n /ᐠ ̥  ̮  ̥ ᐟ\ฅ")
                 if uhoh == "inside":
                     print ("time to go inside! very wise.")
                     break
+            #the user can also decide if they want to play again. If they do, the while loop continues; if they dont, it breaks.
             playagain1 = input ("Play More in the Yard? (y or n)")
             if playagain1 == "y":
                 yardtime == 0
@@ -32,11 +43,14 @@ def go_yard():
         
 def treasure_search():
     print ("\n * \n * \n * \n * \n * \n")
+    #first, the function asks whether the user wants to search or return to the menu. If they select return, it breaks.
     treasureinput = input ("Time for a Treasure hunt! /ᐠ｡ꞈ｡ᐟ✿\ \n type 'look' to look for treasure. \n type 'return' to go back to menu.")
     if treasureinput == "look":
+         #if the user wants to search, they enter the treasure procedure. A while loop is established for the duration of when they want to search.
         searchtime = 0
         while searchtime < 1: 
             print ("you found...")
+            #a random number generator decides what activity the user finds to do. every time they choose to do an activity again, a new number is generated. 
             treasure = random.randint(0,10)
             if treasure == 0:
                 print ("...nothing. what a cat-astrophe.")
@@ -50,11 +64,13 @@ def treasure_search():
                 print ("One half of a pair of socks. They say once the other is found, the user gets great power. \n ✧/ᐠ-ꞈ-ᐟ\ ")
             if treasure == 8 or treasure == 9:
                 ouch = input ("An Old Christmas Ornament. Christmas always comes too early. Knock it off the counter? (y or n)")
+                 #in the event of finding an ornament, the user can either ignore it or interact with it. Depending on the random number, the user gets hurt or nothing happens. 
                 if ouch == "y":
                     if treasure == 8:
                         print ("Ouch! You cut your paw on the sharp ornament. /ᐠᵕ̥ꞈᵕ̩̥ ᐟ\ﾉ")
                     else:
                         print ("CRASH!!! Off it goes. Let's hope your owner notices. \n /ᐠ.ꞈퟑ.ᐟ\"")
+             #the user can also decide if they want to search again. If they do, the while loop continues; if they dont, it breaks.
             searchagain1 = input ("Search Again? (y or n)")
             if searchagain1 == "y":
                 searchtime == 0
@@ -63,20 +79,25 @@ def treasure_search():
 
 def grab_snack():
     print ("\n * \n * \n * \n * \n * \n")
+    #The snack function is one of the simplest out of all of them. The user simply picks what they want to eat before returning to main. 
     snackinput = input ("Eating: One of a cat's favorite chores. \n Thankfully, your owner has recently filled your wet food and dry food bowl! \n ᶠᵉᵉᵈ ᵐᵉ /ᐠ-ⱉ-ᐟ\ﾉ \n would you like wet food, dry food, or.... something else? \n For Wet Food, Press 1. For Dry Food, Press 2. For Something else... Press 3.")
     if snackinput == "1":
         print ("Yum! A delicious, crunchy snack. +1 health! (Just Kidding.) \n /ᐠ ̥ ̣̮ ̥ ᐟ\ﾉ")
     elif snackinput == "2":
         print ("This stuff smells awful, but it is definitely wet. \n /ᐠ . ֑ . ᐟ\ﾉ")
     elif snackinput == "3":
+        #if they choose to eat something different, they can input anything they want. It just returns their selection with text.
         weirdsnack = input ("You want to eat... something else? Whatever floats your boat,I guess. \n What do you want to eat? (Type anything!)")
         print ("Alright, you eat " + weirdsnack + ". Not very nutritious.")
     else: "Sorry, that isn't a valid input. Please type 'return' to return to the selection menu."
     
 
 def main(username):
+    #the default username is 'user.' The user can change it easily on start of game if they choose.
     print ("Hello, " + username + "!")
+    #the user can choose to play or exit. On exiting, a closing message is generated, and the game ends. 
     startgame = input ("It’s time to live out your feline dreams! \n \n Most activities will give you a choice of possible options, and depending on your choice, different things will happen. \n Follow the instructions for inputs, and have fun! \n  ✧/ᐠ-ꞈ-ᐟ\ \n Would you like to play or exit?")
+    #if the user selects to play the game, they enter the body of the procedure. There is a simple number menu that gives all options and connects to all functions. 
     if startgame == "play":
         print ("\n * \n * \n * \n")
         gametime = 1
