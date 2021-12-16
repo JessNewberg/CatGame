@@ -148,7 +148,7 @@ def pester_owner ():
     else:
         print("You, a cat, don't understand that command.")
 
-def play_toy ():
+def toy_play ():
     play_input = input("Time to play with your toys! Would you like to find your next new prey? Y or N: ")
     if play_input == "Y":
         if random.randrange(0,100) < 40:
@@ -170,7 +170,7 @@ def play_toy ():
     else:
         print("Are you a cat irl? You sure type like one! Either way, you don't know that command.")
         
-def take_a_nap ():
+def take_nap ():
     nap_time = input("Is it time for a nap already? Y or N: ")
     if nap_time == "Y":
         print("You took a short cat nap. Oyasumi.")
