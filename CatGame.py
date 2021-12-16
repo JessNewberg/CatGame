@@ -1,9 +1,3 @@
-""" In this game, you are able to play as a cat. 
-You have several options of what to do, all of which are selected by user inputs.
-Each subfunction (all of which connect back to main) works a little differently.
-Some use a randomizer, some leave it completely up to the user to decide what they want to do...
-But generally, the user can do as many cat related activities as they want before exiting out."""
-
 import random
 
 def go_yard():
@@ -128,4 +122,26 @@ def main(username):
     elif startgame == "exit":
         print ("Thank you for playing with us today! \n /ᐠ . ֑ . ᐟ\ﾉ")
 
+def pester_owner ():
+    pesterinput = input ("Let's pester the owner, shall we? (=｀ω´=) \n Type meow to meow at your owner \n Type purr to purr to purr at your owner \n Type slap to slap your owner \n")
+    if pesterinput == "meow":
+        if random.randrange(0,100) < 50:
+            print("Your owner stopped to pet you!")
+        else:
+            print("Your owner ignored you...")
+    elif pesterinput == "purr":
+        if random.randrange(0, 100) < 75:
+            print("Your owner stopped to pet you!")
+        else:
+            print("Woah! Your owner out you in their lap!")
+    elif pesterinput == "slap":
+        if random.randrange(0,100) < 50:
+            print("The owner ignored you!")
+        else:
+            print("Ah... the owner put you in time out.")
+    else:
+        print("You, a cat, don't understand that command.")
+        
 main("User")
+
+
