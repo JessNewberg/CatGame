@@ -130,8 +130,10 @@ def main(username):
 
 def pester_owner ():
     pesterinput = input ("Let's pester the owner, shall we? (=｀ω´=) \n Type meow to meow at your owner \n Type purr to purr to purr at your owner \n Type slap to slap your owner \n")
+    #The pester owner function is a simpple function which asks the user how they would like to pester the owner and then ends the function
     if pesterinput == "meow":
         if random.randrange(0,100) < 50:
+            #Using a random number generator, the code generates a number one to one hundred. This range acts as a mock percentage function
             print("Your owner stopped to pet you!")
         else:
             print("Your owner ignored you...")
@@ -149,6 +151,7 @@ def pester_owner ():
         print("You, a cat, don't understand that command.")
 
 def toy_play ():
+    #Toy play asks the user if they would like to play. If they answer yes, the mock percentage generator will come up with a number and execute a function in response
     play_input = input("Time to play with your toys! Would you like to find your next new prey? Y or N: ")
     if play_input == "Y":
         if random.randrange(0,100) < 40:
@@ -171,6 +174,7 @@ def toy_play ():
         print("Are you a cat irl? You sure type like one! Either way, you don't know that command.")
         
 def take_nap ():
+    #taking a npa is one of the simplest functions. It simply asks the user if they wish to take a nap, and prints dialouge in response to their answer
     nap_time = input("Is it time for a nap already? Y or N: ")
     if nap_time == "Y":
         print("You took a short cat nap. Oyasumi.")
